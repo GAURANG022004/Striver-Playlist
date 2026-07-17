@@ -100,6 +100,19 @@ public class ArraysQuestion
     }
 
 
+    public static void moveszero(int arr[]) {
+
+        int n = arr.length; //1, 2 , 0, 4, 0, 6, 7
+
+        for(int i=1; i<n; i++){
+            if(arr[i-1] == 0){
+                arr[i-1] = arr[i];
+            }
+
+    }
+}
+
+
 
 
 }
