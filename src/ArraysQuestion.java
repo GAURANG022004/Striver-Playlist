@@ -5,11 +5,11 @@ public class ArraysQuestion
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter The size of Array : ");
-        int n = sc.nextInt();
+//        System.out.print("Enter The size of Array : ");
+//        int n = sc.nextInt();
 
-        System.out.print("Enter the K Value : ");
-        int k = sc.nextInt();
+//        System.out.print("Enter the K Value : ");
+//        int k = sc.nextInt();
 
 
 //        int arr[] = new int[n];
@@ -17,13 +17,15 @@ public class ArraysQuestion
 //            arr[i] = sc.nextInt();
 //        }
 
-        int arr[] = {-1,-100,3,99};
+        int arr[] = {1, 2, 0, 3, 0, 4};
 
 
 
 //        reverseArrayByOne(arr);
 
-        LeftRotateArrayBy_Kplace(arr, k);
+//        LeftRotateArrayBy_Kplace(arr, k);
+
+        moveszero(arr);
     }
 
 
@@ -102,17 +104,33 @@ public class ArraysQuestion
 
     public static void moveszero(int arr[]) {
 
-        int n = arr.length; //1, 2 , 0, 4, 0, 6, 7
+        int n = arr.length; // 1 2 0 3 0 4
+                            // 1 2 3 3 0 4
+                            // 1 2 3 4 0 0
 
-        for(int i=1; i<n; i++){
-            if(arr[i-1] == 0){
-                arr[i-1] = arr[i];
+        int i = 0, j = i + 1 ;
+
+        while(j < n-1){
+            if(arr[j] == 0) {
+                i = j;
+
+
+            }
+            j++;
+            if(arr[j] != 0 && arr[i] == 0){
+                arr[i] = arr[j];
+                i++;
             }
 
+        }
+
+        for(int num : arr){
+            System.out.print(num +" ");
+        }
     }
 }
 
 
 
 
-}
+
