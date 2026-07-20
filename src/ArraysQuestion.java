@@ -156,9 +156,11 @@ public class ArraysQuestion
         int i=0, j=0;
         int temp[] = new int[m + n];
 
-        while(i < m){
+        while(i < m) {
             temp[i] = arr1[i];
             i++;
+
+
         }
 
         while(j < n){
