@@ -17,7 +17,7 @@ public class ArraysQuestion
 //            arr[i] = sc.nextInt();
 //        }
 
-        int arr[] = {1, 2, 0, 3, 0, 4};
+        int arr[] = {1, 2, 0, 3, 0, 4, 5};
 
 
 
@@ -27,7 +27,13 @@ public class ArraysQuestion
 
 //        moveszero(arr);
 
-        System.out.println(linearSearch(arr, 5));
+//        System.out.println(linearSearch(arr, 5));
+
+        int arr1[] = {1, 2, 3, 4, 5};
+
+        int arr2[] = {6, 7, 8, 9, 10};
+
+        unionOfTwoSorted(arr1, arr2);
     }
 
 
@@ -141,6 +147,29 @@ public class ArraysQuestion
         }
 
         return -1;
+    }
+
+    public static void unionOfTwoSorted(int arr1[], int arr2[]){
+        int m = arr1.length;
+        int n = arr2.length;
+
+        int i=0, j=0;
+        int temp[] = new int[m + n];
+
+        while(i < m){
+            temp[i] = arr1[i];
+            i++;
+        }
+
+        while(j < n){
+            temp[i] = arr2[j];
+            j++;
+            i++;
+        }
+
+        for(int num : temp){
+            System.out.print(num +" ");
+        }
     }
 }
 
