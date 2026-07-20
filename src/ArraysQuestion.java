@@ -25,7 +25,9 @@ public class ArraysQuestion
 
 //        LeftRotateArrayBy_Kplace(arr, k);
 
-        moveszero(arr);
+//        moveszero(arr);
+
+        System.out.println(linearSearch(arr, 5));
     }
 
 
@@ -128,6 +130,17 @@ public class ArraysQuestion
         for(int num : arr){
             System.out.print(num +" ");
         }
+    }
+
+    public static int linearSearch(int arr[], int k){
+        int n = arr.length;
+        for(int i=0; i<n; i++){
+            if(arr[i] == k){
+                return i;
+            }
+        }
+
+        return -1;
     }
 }
 
