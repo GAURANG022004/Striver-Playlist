@@ -108,20 +108,21 @@ public class ArraysQuestion
                             // 1 2 3 3 0 4
                             // 1 2 3 4 0 0
 
-        int i = 0, j = i + 1 ;
+        int i = 0, j = 0 ;
 
-        while(j < n-1){
-            if(arr[j] == 0) {
-                i = j;
+        while(j < n){
 
-
-            }
-            j++;
-            if(arr[j] != 0 && arr[i] == 0){
-                arr[i] = arr[j];
+            if(arr[j] != 0){
+                arr[i]  = arr[j];
                 i++;
             }
+            j++;
 
+        }
+
+        while(i < n){
+            arr[i] = 0;
+            i++;
         }
 
         for(int num : arr){
