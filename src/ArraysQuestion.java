@@ -20,8 +20,9 @@ public class ArraysQuestion
 
 //        int arr[] = {1, 2, 0, 3, 0, 4, 5};
 
-        int arr[] = {8, 2, 4, 5, 3, 7, 1};
-        System.out.println(findmissingNumber(arr));
+        int arr[] = {8, 2, 4, 5, 3, 7, 1, 6};
+//        System.out.println(findmissingNumber(arr));
+        System.out.println(brutefindmissingNumber(arr));
 
 
 //        reverseArrayByOne(arr);
@@ -189,6 +190,29 @@ public class ArraysQuestion
 
         for(int i=1; i<=n; i++){
             if(temp[i] == 0){
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public static int brutefindmissingNumber(int arr[]){
+        int n = arr.length + 1;
+
+        // 8, 2, 4, 5, 3, 7, 1
+
+
+
+        for(int i=1; i<=n; i++){
+            boolean isFound = false;
+
+            for(int j=0; j<n-1; j++){
+                if(i == arr[j]){
+                    isFound = true;
+                }
+            }
+            if(!isFound){
                 return i;
             }
         }
