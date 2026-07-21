@@ -22,8 +22,8 @@ public class ArraysQuestion
 
         int arr[] = {8, 2, 4, 5, 3, 7, 1, 6};
 //        System.out.println(findmissingNumber(arr));
-        System.out.println(brutefindmissingNumber(arr));
-
+//        System.out.println(brutefindmissingNumber(arr));
+        System.out.println(optimalfindmissingNumber(arr));
 
 //        reverseArrayByOne(arr);
 
@@ -219,6 +219,23 @@ public class ArraysQuestion
 
         return -1;
     }
+
+    public static int optimalfindmissingNumber(int arr[]){
+        int n = arr.length;
+        int sum = 0;
+        int sum2 = 0;
+        for(int i=0; i<n; i++){
+            sum += arr[i];
+        }
+
+        for(int i=1; i<=n+1; i++){
+            sum2 += i;
+        }
+
+        return sum2 - sum;
+    }
+
+
 }
 
 
