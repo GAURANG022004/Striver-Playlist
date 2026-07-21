@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraysQuestion
@@ -17,8 +18,10 @@ public class ArraysQuestion
 //            arr[i] = sc.nextInt();
 //        }
 
-        int arr[] = {1, 2, 0, 3, 0, 4, 5};
+//        int arr[] = {1, 2, 0, 3, 0, 4, 5};
 
+        int arr[] = {8, 2, 4, 5, 3, 7, 1};
+        System.out.println(findmissingNumber(arr));
 
 
 //        reverseArrayByOne(arr);
@@ -29,9 +32,9 @@ public class ArraysQuestion
 
 //        System.out.println(linearSearch(arr, 5));
 
-        int arr1[] = {1, 2, 3, 4, 5};
+        int arr1[] = {1, 7, 9, 11, 15, 19, 40};
 
-        int arr2[] = {6, 7, 8, 9, 10};
+        int arr2[] = {6, 12, 16, 21, 27};
 
         unionOfTwoSorted(arr1, arr2);
     }
@@ -109,7 +112,6 @@ public class ArraysQuestion
 
     }
 
-
     public static void moveszero(int arr[]) {
 
         int n = arr.length; // 1 2 0 3 0 4
@@ -169,9 +171,29 @@ public class ArraysQuestion
             i++;
         }
 
+        Arrays.sort(temp);
+
         for(int num : temp){
             System.out.print(num +" ");
         }
+    }
+
+    public static int findmissingNumber(int arr[]){
+        int n = arr.length + 1;
+
+        int temp[] = new int[n+1];
+
+        for(int i=0; i<n-1; i++){
+            temp[arr[i]]++;
+        }
+
+        for(int i=1; i<=n; i++){
+            if(temp[i] == 0){
+                return i;
+            }
+        }
+
+        return -1;
     }
 }
 
