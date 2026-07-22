@@ -6,38 +6,53 @@ public class ArraysQuestion
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-//        System.out.print("Enter The size of Array : ");
-//        int n = sc.nextInt();
-
-//        System.out.print("Enter the K Value : ");
-//        int k = sc.nextInt();
+        System.out.print("Enter The size of Array : ");
+        int n = sc.nextInt();
 
 
-//        int arr[] = new int[n];
-//        for(int i = 0;i<n;i++){
-//            arr[i] = sc.nextInt();
-//        }
+        int arr[] = new int[n];
+        for(int i = 0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
 
-//        int arr[] = {1, 2, 0, 3, 0, 4, 5};
 
-        int arr[] = {8, 2, 4, 5, 3, 7, 1, 6};
+
+
+
+
+        //Question : Finding Missing Number
+//        int arr[] = {8, 2, 4, 5, 3, 7, 1, 6};
 //        System.out.println(findmissingNumber(arr));
 //        System.out.println(brutefindmissingNumber(arr));
-        System.out.println(optimalfindmissingNumber(arr));
+//        System.out.println(optimalfindmissingNumber(arr));
 
+        //Question : Reverse Array By One (Left Rotation Array By One)
 //        reverseArrayByOne(arr);
 
+        //Question : Left Rotate Array By K Place
+//        System.out.print("Enter the K Value : ");
+//        int k = sc.nextInt();
 //        LeftRotateArrayBy_Kplace(arr, k);
 
+        //Question : Moves All Zero At the End of Array
+//        int arr[] = {1, 2, 0, 3, 0, 4, 5};
 //        moveszero(arr);
 
+        //Question : Linear Search
 //        System.out.println(linearSearch(arr, 5));
 
-        int arr1[] = {1, 7, 9, 11, 15, 19, 40};
 
-        int arr2[] = {6, 12, 16, 21, 27};
+        //Question : Union of Two Sorted Then Sort after merge
+//        int arr1[] = {1, 7, 9, 11, 15, 19, 40};
+//        int arr2[] = {6, 12, 16, 21, 27};
 
-        unionOfTwoSorted(arr1, arr2);
+//        unionOfTwoSorted(arr1, arr2);
+
+        //Question : Count Maximum Consecutive One's in the array
+        System.out.println(countConsecutiveTerm(arr));
+
+
+
     }
 
 
@@ -233,6 +248,29 @@ public class ArraysQuestion
         }
 
         return sum2 - sum;
+    }
+
+    public static int countConsecutiveTerm(int arr[]){
+        int n = arr.length;
+        int count = 0;
+        int maxCount = 0;
+        // 1, 1, 0, 1, 1, 1
+
+        for(int i=0; i<n; i++){
+
+            if(arr[i] == 1){
+                count++;
+            }
+            else{
+                count = 0;
+            }
+
+            maxCount = Math.max(count, maxCount);
+        }
+
+        return maxCount;
+
+
     }
 
 
