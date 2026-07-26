@@ -49,9 +49,10 @@ public class ArraysQuestion
 //        unionOfTwoSorted(arr1, arr2);
 
         //Question : Count Maximum Consecutive One's in the array
-        System.out.println(countConsecutiveTerm(arr));
+//        System.out.println(countConsecutiveTerm(arr));
 
-
+        //Question : Stock Buy and Sell
+        System.out.println(stockBuyAndSell(arr));
 
     }
 
@@ -271,6 +272,19 @@ public class ArraysQuestion
 
     }
 
+    //7,1,5,3,6,4
+    public static int stockBuyAndSell(int arr[]){
+        int mini  = arr[0], maxprofit = 0, cost = 0;
+        int n = arr.length;
+
+        for(int i=1; i<n; i++){
+            cost = arr[i] - mini;
+            maxprofit = Math.max(cost, maxprofit);
+            mini = Math.min(mini, arr[i]);
+        }
+
+        return maxprofit;
+    }
 
 }
 
