@@ -300,6 +300,16 @@ public class ArraysQuestion
 
 
     }
+    //10, 5, 2, 7, 1, 9
+    public static void longestSumofSubarray(int arr[]){
+        int n = arr.length;
+        int sum = 0;
+        int i=0, j=0;
+
+        while(j < n){
+            if(arr[])
+        }
+    }
 
 }
 
