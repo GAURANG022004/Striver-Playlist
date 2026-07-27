@@ -52,8 +52,10 @@ public class ArraysQuestion
 //        System.out.println(countConsecutiveTerm(arr));
 
         //Question : Stock Buy and Sell
-        System.out.println(stockBuyAndSell(arr));
+//        System.out.println(stockBuyAndSell(arr));
 
+        //Question : Find the number that appears once, and the other numbers twice
+        NumberthatAppearOnce(arr);
     }
 
 
@@ -284,6 +286,19 @@ public class ArraysQuestion
         }
 
         return maxprofit;
+    }
+
+    //4 1 2 1 2
+    public static void NumberthatAppearOnce(int arr[]){
+       int xor = 0;
+
+       for(int num : arr){
+           xor ^= num;
+       }
+
+        System.out.println("Number that Appear Once : "+ xor);
+
+
     }
 
 }
