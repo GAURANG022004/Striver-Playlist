@@ -55,7 +55,11 @@ public class ArraysQuestion
 //        System.out.println(stockBuyAndSell(arr));
 
         //Question : Find the number that appears once, and the other numbers twice
-        NumberthatAppearOnce(arr);
+//        NumberthatAppearOnce(arr);
+
+        //Leetcode rearrange
+        rearrangeArray(arr);
+
     }
 
 
@@ -300,6 +304,7 @@ public class ArraysQuestion
 
 
     }
+
     //10, 5, 2, 7, 1, 9
     public static void longestSumofSubarray(int arr[]){
         int n = arr.length;
@@ -307,8 +312,61 @@ public class ArraysQuestion
         int i=0, j=0;
 
         while(j < n){
-            if(arr[])
+            if(arr[i] + arr[j] > 15){
+                sum = arr[j] - arr[i];
+                i--;
+            }else if(arr[i] + arr[j] < 15){
+                j++;
+            }
+
         }
+    }
+
+    //3 1 -2 -5 2 -4
+    public static void rearrangeArray(int[] arr) {
+        int n = arr.length;
+
+        int temp[] = new int[n];
+        int i=0, j=0, k=0;
+
+        while(k < n){
+
+            System.out.println("in the beginin the value of i : "+i);
+
+            while(i < n && arr[i] < 0){
+
+                i++;
+
+            }
+
+            System.out.println("i : "+i);
+            temp[k++] = arr[i++];
+            System.out.println("k++  : "+k);
+            System.out.println("i++  : "+i);
+
+
+            while(j < n && arr[j] >= 0){
+                j++;
+            }
+            System.out.println("j : "+j);
+
+            temp[k++] = arr[j++];
+            System.out.println("k++  : "+k);
+            System.out.println("j++  : "+j);
+
+            System.out.println("In the last of code value of i : "+i);
+
+        }
+
+        for(int num : temp){
+            System.out.print(num+" ");
+        }
+
+
+
+
+
+
     }
 
 }
