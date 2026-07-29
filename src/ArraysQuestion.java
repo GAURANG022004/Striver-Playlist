@@ -58,7 +58,10 @@ public class ArraysQuestion
 //        NumberthatAppearOnce(arr);
 
         //Leetcode rearrange
-        rearrangeArray(arr);
+//        rearrangeArray(arr);
+
+        //Question : Longest Subarray with given Sum K(Positives)
+        longestSubarray(arr, 15);
 
     }
 
@@ -369,28 +372,32 @@ public class ArraysQuestion
 
     }
 
-    //[10, 5, 2, 7, 1, 9], k = 15
-    public static void longestSubarray(int[] arr){
+    //[10, 5, 2, 3, 47, 1, 9], k = 15
+    public static void longestSubarray(int[] arr, int k){
         int n = arr.length;
 
-        int i =0, j = 1, maxCount = 0, sum = arr[i] + arr[j];
+        int i = 0, j = 0, maxCount = 0, sum = arr[i];
 
-        while(i < n){
-            if(sum < 15){
-                sum += arr[j];
+        while(i < n-1 && j < n-1){
+            if(sum < k){
                 j++;
+                sum += arr[j];
 
             }
-            else if(sum > 15){
+            else if(sum > k ){
                 sum -= arr[i];
                 i++;
             }
-            else if(sum == 15){
+            else if(sum == k ){
                 maxCount = Math.max(maxCount,  j - i + 1);
-                sum = 0;
+                i++;
+                j = i;
+                sum = arr[i];
 
             }
         }
+
+        System.out.println("MaxCount : "+maxCount);
 
     }
 
