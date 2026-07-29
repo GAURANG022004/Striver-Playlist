@@ -369,6 +369,31 @@ public class ArraysQuestion
 
     }
 
+    //[10, 5, 2, 7, 1, 9], k = 15
+    public static void longestSubarray(int[] arr){
+        int n = arr.length;
+
+        int i =0, j = 1, maxCount = 0, sum = arr[i] + arr[j];
+
+        while(i < n){
+            if(sum < 15){
+                sum += arr[j];
+                j++;
+
+            }
+            else if(sum > 15){
+                sum -= arr[i];
+                i++;
+            }
+            else if(sum == 15){
+                maxCount = Math.max(maxCount,  j - i + 1);
+                sum = 0;
+
+            }
+        }
+
+    }
+
 }
 
 
