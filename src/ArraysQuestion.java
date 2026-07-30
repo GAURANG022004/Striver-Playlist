@@ -372,23 +372,25 @@ public class ArraysQuestion
 
     }
 
-    //[10, 5, 2, 3, 4, 1, 9], k = 15
+    //[10, 5, 2, 3, 4]], 1, 9], k = 15
     public static void longestSubarray(int[] arr, int k){
         int n = arr.length;
 
         int i = 0, j = 0, maxCount = 0, sum = 0;
 
-        while(j < n){
+        while(j < n) {
 
             sum += arr[j];
 
-            while(sum >= k ){
-                maxCount = Math.max(maxCount,  j - i + 1);
+            while (sum >= k) {
+                maxCount = Math.max(maxCount, j - i + 1);
                 sum -= arr[i];
                 i++;
 
             }
             j++;
+
+
         }
 
         System.out.println("MaxCount : "+maxCount);
