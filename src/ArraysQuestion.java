@@ -393,7 +393,7 @@ public class ArraysQuestion
 
         }
 
-        System.out.println("MaxCount : "+maxCount);
+        System.out.println("MaxCount : "+maxCount) ;
 
     }
 
