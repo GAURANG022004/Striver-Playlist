@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.*;
 
 public class ArraysQuestion
 {
@@ -61,8 +62,10 @@ public class ArraysQuestion
 //        rearrangeArray(arr);
 
         //Question : Longest Subarray with given Sum K(Positives)
-        longestSubarray(arr, 15);
+//        longestSubarray(arr, 15);
 
+        //Question : Length of the longest subarray with zero Sum
+        System.out.println(maxLen(arr));
     }
 
 
@@ -395,6 +398,29 @@ public class ArraysQuestion
 
         System.out.println("MaxCount : "+maxCount) ;
 
+    }
+
+
+    public static int maxLen(int[] arr) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        int sum = 0;
+        int maxLen = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+
+            if (sum == 0) {
+                maxLen = i + 1;
+            }
+
+            if (map.containsKey(sum)) {
+                maxLen = Math.max(maxLen, i - map.get(sum));
+            } else {
+                map.put(sum, i);
+            }
+        }
+
+        return maxLen;
     }
 
 }
